@@ -37,12 +37,6 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --upgrade buildozer
 
-      - name: Кэш для Android SDK/NDK
-        uses: actions/cache@v4
-        with:
-          path: ~/.buildozer
-          key: buildozer-cache
-
       - name: Сборка APK
         run: |
           yes | buildozer -v android debug
