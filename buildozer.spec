@@ -20,7 +20,7 @@ presplash.filename = %(source.dir)s/app_icon_preview.png
 presplash_color = #0f1522
 
 # ---------- Зависимости ----------
-requirements = python3,kivy==2.2.1,requests,urllib3,certifi
+requirements = python3,kivy==2.3.1,requests,urllib3,certifi
 
 # ---------- Android ----------
 # Целевой SDK 33, минимальный — 26 (Android 8.0+)
