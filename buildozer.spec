@@ -48,5 +48,5 @@ android.skip_update = False
 
 # ---------- Логи ----------
 log_level = 2
-warn_on_root = 1
+warn_on_root = 0
 #android.logcat_filters = *:S python:I
