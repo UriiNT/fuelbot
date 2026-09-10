@@ -1,0 +1,18 @@
+# Артефакты сборки
+bin/
+build/
+dist/
+*.spec
+*.apk
+*.aab
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Логи
+*.log
+
+# Настройки приложения
+fuelbot_settings.json
