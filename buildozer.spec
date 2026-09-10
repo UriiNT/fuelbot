@@ -21,7 +21,7 @@ presplash_color = #0f1522
 
 # ---------- Зависимости ----------
 requirements = python3,kivy,requests,urllib3,certifi
-p4a.branch = 2024.01.21
+p4a.branch = v2024.01.21
 
 # ---------- Android ----------
 # Целевой SDK 33, минимальный — 26 (Android 8.0+)
