@@ -8,10 +8,34 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: kivy/buildozer:latest
     steps:
       - name: Клонирование проекта
         uses: actions/checkout@v4
+
+      - name: Установка Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Установка Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Установка системных пакетов
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential git ccache \
+            autoconf automake libtool libltdl-dev cmake \
+            libffi-dev libssl-dev pkg-config zlib1g-dev \
+            libncurses-dev wget zip unzip
+
+      - name: Установка Buildozer
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade buildozer
 
       - name: Кэш для Android SDK/NDK
         uses: actions/cache@v4
@@ -20,7 +44,8 @@ jobs:
           key: buildozer-cache
 
       - name: Сборка APK
-        run: yes | buildozer -v android debug
+        run: |
+          yes | buildozer -v android debug
 
       - name: Загрузка APK
         uses: actions/upload-artifact@v4
