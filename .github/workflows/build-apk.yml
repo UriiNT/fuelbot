@@ -20,7 +20,7 @@ jobs:
           key: buildozer-cache
 
       - name: Сборка APK
-        run: buildozer -v android debug
+        run: yes | buildozer -v android debug
 
       - name: Загрузка APK
         uses: actions/upload-artifact@v4
